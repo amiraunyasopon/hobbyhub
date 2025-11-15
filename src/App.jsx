@@ -10,20 +10,26 @@ function App() {
             path: "/",
             element: <Landing />
         },
-        // {
-        //     path: "/gallery/edit/:id",
-        //     element: <EditCrew />
-        // },
-        // {
-        //     path: "/gallery/detailed/:id",
-        //     element: <DetailedView />
-        // }
+        {
+            path: "/new",
+            element: <CreatePost />
+        },
+        {
+            path: "/edit/:id",
+            element: <EditPost />
+        },
+        {
+            path: "/post/:id",
+            element: <PostDetails />
+        }
     ])
     return (
         <>
-            <NavBar />
-            <div>
-                {element}
+            <div className="whole-page">
+                <NavBar />
+                <div>
+                    {element}
+                </div>
             </div>
         </>
     )
