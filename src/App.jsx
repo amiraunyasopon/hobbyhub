@@ -1,7 +1,7 @@
 import './App.css'
 import { useRoutes } from 'react-router-dom'
 import Landing from "./pages/Landing"
-import NavBar from "./components/NavBar"
+import Navbar from "./components/Navbar"
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
     return (
         <>
             <div className="whole-page">
-                <NavBar />
+                <Navbar />
                 <div>
                     {element}
                 </div>
