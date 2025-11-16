@@ -3,7 +3,7 @@ import { supabase } from '../client';
 import "./CreatePost.css"
 
 const CreatePost = () => {
-    const [post, setPost] = useState({ title: "", description: "", image: "", key: "" })
+    const [post, setPost] = useState({ title: "", description: "", image: "", key: "123" })
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,12 +17,12 @@ const CreatePost = () => {
 
     const createPost = async (e) => {
         e.preventDefault();
-
-        await supabase
-            .from("Posts")
-            .insert({ title: post.title, description: post.description, image: post.image, key: post.key })
-            .select();
-
+        if (post.title != "") {
+            await supabase
+                .from("Posts")
+                .insert({ title: post.title, description: post.description, image: post.image, key: post.key })
+                .select();
+        }
         window.location = "/"
     }
 
