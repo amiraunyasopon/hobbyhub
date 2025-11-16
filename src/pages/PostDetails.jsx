@@ -4,10 +4,11 @@ import { supabase } from "../client"
 import dayjs from "dayjs"
 import "./PostDetails.css"
 
-const PostDetails = (props) => {
+const PostDetails = () => {
     const { id } = useParams()
-    const [post, setPost] = useState(null)
+    const [post, setPost] = useState({ title: "", description: "", image: "", upvotes: 0, comments: [] })
     const [upvotes, setUpvotes] = useState(null)
+    const [comment, setComment] = useState("")
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -33,7 +34,25 @@ const PostDetails = (props) => {
         setUpvotes((upvotes) => upvotes + 1)
     }
 
-    const formattedCreationTime = dayjs(post.creationTime).format("MMMM D, YYYY h:mm A")
+    const handleCommentChange = (e) => {
+        setComment(e.target.value)
+    }
+
+    const createComment = async (e) => {
+        e.preventDefault();
+        const newComments = [...post.comments, comment]
+        await supabase
+            .from("Posts")
+            .update({ comments: newComments })
+            .eq("id", id);
+        setPost((prev) => ({
+            ...prev,
+            comments: newComments
+        }))
+        setComment("")
+    }
+
+    const formattedCreationTime = dayjs(post.created_at).format("MMMM D, YYYY h:mm A")
 
     return (
         <div>
@@ -42,12 +61,31 @@ const PostDetails = (props) => {
                     <>
                         <h1>{post.title}</h1>
                         <p>{formattedCreationTime}</p>
-                        <img src={post.image} alt="" />
+                        {post.image && <img src={post.image} alt={post.title} />}
                         <p>{post.description}</p>
                         <button onClick={handleUpvote}>{upvotes} upvotes</button>
                     </>
                 ) :
                     <p>Loading...</p>
+            }
+            <form>
+                <h1>comment section</h1>
+                <input
+                    type="text"
+                    value={comment}
+                    onChange={handleCommentChange}
+                    className="form-input"
+                />
+                <button type="submit" onClick={createComment} className="submit-button">
+                    Comment
+                </button>
+            </form>
+            {
+                post.comments ? (
+                    post.comments.map((comment, index) => {
+                        return <div key={index}>{comment}</div>
+                    })
+                ) : <div />
             }
         </div>
     )

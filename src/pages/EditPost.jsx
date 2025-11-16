@@ -6,7 +6,7 @@ import "./EditPost.css"
 const EditPost = () => {
     const { id } = useParams();
     // track secret key but never display it to the user
-    const [post, setPost] = useState(null)
+    const [post, setPost] = useState({ title: "", description: "", image: "" })
     const [inputKey, setInputKey] = useState("")
 
     useEffect(() => {
