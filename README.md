@@ -4,7 +4,7 @@ Submitted by: **Amir Aunyasopon**
 
 This web app: **A platform for users to share their talent online. Users are able to make, edit, and delete their own posts. Posts are viewable on a landing page, and can be viewed in greater detail by clicking on them**
 
-Time spent: **7** hours spent in total
+Time spent: **8** hours spent in total
 
 ## Required Features
 
@@ -52,7 +52,7 @@ The following **optional** features are implemented:
 - [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post
   - Users can repost a previous post by referencing its post ID
   - On the post page of the new post, the referenced post is displayed and linked, creating a thread
-- [ ] Users can customize the interface
+- [x] Users can customize the interface
   - e.g., selecting the color scheme or showing the content and image of each post on the home feed
 - [ ] Users can add more characterics to their posts
   - Users can share and view web videos
@@ -61,18 +61,21 @@ The following **optional** features are implemented:
   - Users can upload images directly from their local machine as an image file
 - [x] Web app displays a loading animation whenever data is being fetched
 
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
-
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<div>
+    <a href="https://www.loom.com/share/d25ae7c217314dce8eac4d44325b23c6">
+      <p>CodePath — Too Talented - 17 November 2025 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/d25ae7c217314dce8eac4d44325b23c6">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d25ae7c217314dce8eac4d44325b23c6-da1eaa8405ebf1fd-full-play.gif#t=0.1">
+    </a>
+  </div>
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+Video created with Loom
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
