@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Post from '../components/Post'
 import "./Landing.css"
 
-const Landing = () => {
+const Landing = (props) => {
     const [posts, setPosts] = useState([])
     const [sortOption, setSortOption] = useState("byDate");
 
@@ -25,7 +25,7 @@ const Landing = () => {
     const sortedPosts = [...posts].sort((a, b) => {
         if (sortOption === "byDate") {
             return new Date(a.created_at) - new Date(b.created_at); // Sort by date (ascending)
-        } else if (sortOption === "hottest") {
+        } else if (sortOption === "trending") {
             return b.upvotes - a.upvotes; // Sort by upvotes (descending)
         }
     });
@@ -54,10 +54,10 @@ const Landing = () => {
     return (
         <div className="readPosts">
             <div className="sortMenu">
-                <label htmlFor="sort">Sort By: </label>
+                <label htmlFor="sort">sort by </label>
                 <select id="sort" value={sortOption} onChange={handleSortChange}>
-                    <option value="byDate">By Date</option>
-                    <option value="hottest">Hottest</option>
+                    <option value="byDate">by date</option>
+                    <option value="trending">trending</option>
                 </select>
             </div>
             {
@@ -71,8 +71,9 @@ const Landing = () => {
                                 title={post.title}
                                 upvotes={post.upvotes}
                                 onUpvote={() => handleUpvote(post.id)}
+                                theme={props.theme}
                             />
-                        ) : <h2>{"No Posts Yet"}</h2>
+                        ) : <h2>{"no posts yet"}</h2>
             }
         </div>
     )

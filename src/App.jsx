@@ -18,7 +18,7 @@ function App() {
         },
         {
             path: "/new",
-            element: <CreatePost />
+            element: <CreatePost theme={theme} />
         },
         {
             path: "/edit/:id",
@@ -41,7 +41,7 @@ function App() {
     return (
         <>
             <div className={`whole-page ${theme}`}>
-                <Navbar onToggleTheme={toggleTheme} theme={theme}/>
+                <Navbar onToggleTheme={toggleTheme} theme={theme} />
                 <div className="theme-toggle">
                     {element}
                 </div>

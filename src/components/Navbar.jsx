@@ -5,9 +5,9 @@ const Navbar = (props) => {
     return (
         <>
             <div className="nav-bar">
-                <Link to="/"><button className={`headerBtn ${props.theme}`}>Too Talented</button></Link>
-                <Link to="/new"><button className={`headerBtn ${props.theme}`}>Post</button></Link>
-                <Link to="/contact"><button className={`headerBtn ${props.theme}`}>Contact Us</button></Link>
+                <Link to="/"><button className={`headerBtn ${props.theme}`}>too talented</button></Link>
+                <Link to="/new"><button className={`headerBtn ${props.theme}`}>post</button></Link>
+                <Link to="/contact"><button className={`headerBtn ${props.theme}`}>contact us</button></Link>
                 <button className={`headerBtn ${props.theme}`} onClick={props.onToggleTheme}>theme</button>
             </div>
         </>

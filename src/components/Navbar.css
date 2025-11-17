@@ -21,33 +21,20 @@
     color: #fff;
 }
 
-.headerBtn.dark:hover {
-    background-color: #777;
-    /* Lighter gray on hover */
-    transform: scale(1.05);
-    /* Slightly enlarge the button */
-}
-
-.headerBtn.dark:active {
-    background-color: #444;
-    /* Darker gray when clicked */
-    transform: scale(0.95);
-    /* Slightly shrink the button */
-}
 
 .headerBtn.light {
     background-color: #fff;
     color: #000000;
 }
 
-.headerBtn.light:hover {
+.headerBtn:hover {
     background-color: #777;
     /* Lighter gray on hover */
     transform: scale(1.05);
     /* Slightly enlarge the button */
 }
 
-.headerBtn.light:active {
+.headerBtn:active {
     background-color: #444;
     /* Darker gray when clicked */
     transform: scale(0.95);
