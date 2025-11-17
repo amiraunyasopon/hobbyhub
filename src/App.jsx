@@ -1,5 +1,6 @@
 import './App.css'
 import { useRoutes } from 'react-router-dom'
+import { useState } from "react"
 import Landing from "./pages/Landing"
 import CreatePost from "./pages/CreatePost"
 import EditPost from "./pages/EditPost"
@@ -8,6 +9,7 @@ import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 
 function App() {
+    const [theme, setTheme] = useState("dark");
 
     let element = useRoutes([
         {
@@ -32,11 +34,15 @@ function App() {
         }
     ])
 
+    const toggleTheme = () => {
+        setTheme((prevTheme => (prevTheme === "light" ? "dark" : "light")))
+    }
+
     return (
         <>
-            <div className="whole-page">
-                <Navbar />
-                <div>
+            <div className={`whole-page ${theme}`}>
+                <Navbar onToggleTheme={toggleTheme} theme={theme}/>
+                <div className="theme-toggle">
                     {element}
                 </div>
             </div>

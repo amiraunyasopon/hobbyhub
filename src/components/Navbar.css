@@ -1,0 +1,55 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    padding: 10px;
+}
+
+.headerBtn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.headerBtn.dark {
+    background-color: #000000;
+    color: #fff;
+}
+
+.headerBtn.dark:hover {
+    background-color: #777;
+    /* Lighter gray on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the button */
+}
+
+.headerBtn.dark:active {
+    background-color: #444;
+    /* Darker gray when clicked */
+    transform: scale(0.95);
+    /* Slightly shrink the button */
+}
+
+.headerBtn.light {
+    background-color: #fff;
+    color: #000000;
+}
+
+.headerBtn.light:hover {
+    background-color: #777;
+    /* Lighter gray on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the button */
+}
+
+.headerBtn.light:active {
+    background-color: #444;
+    /* Darker gray when clicked */
+    transform: scale(0.95);
+    /* Slightly shrink the button */
+}
